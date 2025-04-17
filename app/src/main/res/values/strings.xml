@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_1">lion_school</string>
+    <string name="app_name">BMI</string>
+    <string name="logo">Application Logo</string>
+    <string name="welcome">Lion School</string>
+    <string name="your_name">What\'s your name</string>
+    <string name="name_error_message">The user name is required</string>
+    <string name="next">Your BMI Result</string>
+</resources>
