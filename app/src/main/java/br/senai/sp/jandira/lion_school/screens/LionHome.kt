@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -18,6 +19,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -36,6 +38,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -59,77 +62,106 @@ fun LionHome(){
 
     val context = LocalContext.current
 
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(horizontal = 16.dp),
+        verticalArrangement = Arrangement.SpaceBetween,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
 
-        Column(
+
+        Row(
             modifier = Modifier
-                .fillMaxSize(),
-            verticalArrangement = Arrangement.SpaceBetween,
-            horizontalAlignment = Alignment.CenterHorizontally
-
-
-            ) {
-
-
-                //Row para a imagem e o texto "Welcome"
-                Row(
-                    modifier = Modifier
-                        .padding(top = 40.dp)
-                        .fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Center,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    // Imagem do logo
-                    Image(
-                        painter = painterResource(R.drawable.img),
-                        contentDescription = stringResource(R.string.logo),
-                        modifier = Modifier
-                            .size(200.dp)
-                    )
-
-
-                    Text(
-                        text = stringResource(R.string.welcome),
-                        color = Color.Black,
-                        fontSize = 55.sp,
-                        fontWeight = FontWeight.Bold,
-                        modifier = Modifier.padding(start = 16.dp) // Adiciona espaçamento entre a imagem e o texto
-                    )
-                }
-
-            Row (
+                .fillMaxWidth()
+                .padding(top = 40.dp),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            // Imagem da escola
+            Image(
+                painter = painterResource(R.drawable.img),
+                contentDescription = stringResource(R.string.logo),
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 45.dp, vertical = 30.dp),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
+                    .size(200.dp)
+                    .padding(end = 8.dp)
+            )
 
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.img_4),
-                    contentDescription = stringResource(R.string.logo),
-                    modifier = Modifier
-                        .size(30.dp),
-                )
-                Image(
-                    painter = painterResource(R.drawable.img_3),
-                    contentDescription = stringResource(R.string.logo),
-                    modifier = Modifier
-                        .size(30.dp)
-                )
-                Image(
-                    painter = painterResource(R.drawable.img_1),
-                    contentDescription = stringResource(R.string.logo),
-                    modifier = Modifier
-                        .size(30.dp)
-                )
-                Image(
-                    painter = painterResource(R.drawable.img_2),
-                    contentDescription = stringResource(R.string.logo),
-                    modifier = Modifier
-                        .size(30.dp)
-                )
-            }
+            // Nome da escola
+            Text(
+                text = stringResource(R.string.welcome),
+                color = Color.Black,
+                fontSize = 50.sp,
+                fontWeight = FontWeight.Bold
+            )
         }
+        Spacer(modifier = Modifier.height(32.dp))
+
+
+        Text(
+            text = "Find your favorite course",
+            fontSize = 22.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color(0xFF1A73E8)
+        )
+
+
+        Text(
+            text = "Get to your destination faster, study at the best vocational school in Brazil. Be the best version of yourself.",
+            fontSize = 20.sp,
+            color = Color.Gray,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(vertical = 16.dp)
+        )
+
+
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 24.dp)
+                .background(color = Color(0xFFFDBA2D), shape = RoundedCornerShape(50.dp))
+                .padding(vertical = 12.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                text = "Get Started",
+                fontWeight = FontWeight.Bold,
+                color = Color(0xFF2D3E50)
+            )
+        }
+        Spacer(modifier = Modifier.height(40.dp))
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 45.dp, vertical = 30.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Image(
+                painter = painterResource(R.drawable.img_4),
+                contentDescription = stringResource(R.string.logo),
+                modifier = Modifier.size(30.dp)
+            )
+            Image(
+                painter = painterResource(R.drawable.img_3),
+                contentDescription = stringResource(R.string.logo),
+                modifier = Modifier.size(30.dp)
+            )
+            Image(
+                painter = painterResource(R.drawable.img_1),
+                contentDescription = stringResource(R.string.logo),
+                modifier = Modifier.size(30.dp)
+            )
+            Image(
+                painter = painterResource(R.drawable.img_2),
+                contentDescription = stringResource(R.string.logo),
+                modifier = Modifier.size(30.dp)
+            )
+        }
+    }
+
+
 }
 
 
